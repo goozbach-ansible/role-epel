@@ -1,0 +1,46 @@
+---
+- name: ensure directory /etc/pki/rpm-gpg/
+  file: path=/etc/pki/rpm-gpg/ state=directory recurse=yes
+  tags:
+    - epel
+
+- name: copy GPG key
+  copy: src=RPM-GPG-KEY-EPEL-6 dest=/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6 owner=root group=root mode=0644
+  tags:
+    - epel
+
+- name: ensure directory /etc/rpm/
+  file: path=/etc/rpm state=directory recurse=yes
+  tags:
+    - epel
+
+- name: copy rpm macros
+  copy: src=macros.ghc-srpm dest=/etc/rpm/macros.ghc-srpm owner=root group=root mode=0644
+  tags:
+    - epel
+
+- name: ensure directory /usr/share/doc/epel-release-6/
+  file: path=/usr/share/doc/epel-release-6/ state=directory recurse=yes
+  tags:
+    - epel
+
+- name: copy GPL
+  copy: src=GPL dest=/usr/share/doc/epel-release-6/ owner=root group=root mode=0644
+  tags:
+    - epel
+
+- name: ensure directory /etc/yum.repos.d/
+  file: path=/etc/yum.repos.d/ state=directory recurse=yes
+  tags:
+    - epel
+
+- name: template epel.repo
+  template: src=epel.repo dest=/etc/yum.repos.d/epel.repo owner=root group=root mode=0644
+  tags:
+    - epel
+
+- name: template epel-testing.repo
+  template: src=epel-testing.repo dest=/etc/yum.repos.d/epel.repo owner=root group=root mode=0644
+  tags:
+    - epel
+  
