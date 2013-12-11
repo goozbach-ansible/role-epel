@@ -40,7 +40,7 @@
     - epel
 
 - name: template epel-testing.repo
-  template: src=epel-testing.repo dest=/etc/yum.repos.d/epel.repo owner=root group=root mode=0644
+  template: src=epel-testing.repo dest=/etc/yum.repos.d/epel-testing.repo owner=root group=root mode=0644
   tags:
     - epel
   
