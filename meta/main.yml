@@ -96,10 +96,9 @@ galaxy_info:
   #- database
   #- database:nosql
   #- database:sql
-  - development
+  #- development
   #- monitoring
-  - web
-  - third-party
+  #- web
 dependencies:
   # List your role dependencies here, one per line. Only
   # dependencies available via galaxy should be listed here.
