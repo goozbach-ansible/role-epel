@@ -12,18 +12,20 @@ To use, setup your role like this:
 
 # Options
 
-* Enable `epel-testing` like this (default is `0`):
+## EPEL Testing
+Enable `epel-testing` like this (default is `0`):
 
-	---
-	- hosts: all
-	  remote_user: root
-	    roles:
-	  - { role: epel, epel_testing_enabled: 1 }
+    ---
+    - hosts: all
+      remote_user: root
+        roles:
+      - { role: epel, epel_testing_enabled: 1 }
 
-* Change state of `epel-release` rpm (default is `installed`, change to `latest` to get an updated rpm):
+## EPEL Release mode
+Change state of `epel-release` rpm (default is `installed`, change to `latest` to get an updated rpm):
 
-	---
-	- hosts: all
-	  remote_user: root
-	  roles:
-	    - { role: epel, epel_state: latest }
+    ---
+    - hosts: all
+      remote_user: root
+      roles:
+        - { role: epel, epel_state: latest }
