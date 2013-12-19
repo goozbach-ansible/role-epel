@@ -44,3 +44,8 @@
   tags:
     - epel
   
+- name: install epel-release
+  yum: name=epel-release state={{ epel_state }}
+  tags:
+    - epel
+
