@@ -1,10 +1,9 @@
 ---
-license: GPL
 galaxy_info:
   author: Derek Carter
   description: EPEL repository setup
   company: Goozbach Infrastructure Solutions http://goozbach.com/
-  license: license GPLv2
+  license: GPLv2
   min_ansible_version: 1.2 (or higher)
   #
   # Below are all platforms currently available. Just uncomment
@@ -97,9 +96,10 @@ galaxy_info:
   #- database
   #- database:nosql
   #- database:sql
-  #- development
+  - development
   #- monitoring
-  #- web
+  - web
+  - third-party
 dependencies:
   # List your role dependencies here, one per line. Only
   # dependencies available via galaxy should be listed here.
