@@ -8,18 +8,28 @@ To use, setup your role like this:
     - hosts: all
       remote_user: root
       roles:
-        - epel
+        - goozbach.EPEL
 
 # Options
 
-## EPEL Testing
-Enable `epel-testing` like this (default is `0`):
+## Disabling repos
+
+Enable or disable `epel-testing` or `epel` repositories like this:
+
+-  `epel_testing_enabled` is `0` by default
+-  `epel_enabled` is `1` by default
 
     ---
     - hosts: all
       remote_user: root
         roles:
-      - { role: epel, epel_testing_enabled: 1 }
+      - { role: goozbach.EPEL, epel_testing_enabled: 1 }
+      - { role: goozbach.EPEL, epel_enabled: 0 }
+
+To use a disabled repo using the `yum` module use this syntax:
+
+    - name: install the latest version of Apache from the testing repo
+      yum: name=httpd enablerepo=epel state=installed
 
 ## EPEL Release mode
 Change state of `epel-release` rpm (default is `installed`, change to `latest` to get an updated rpm):
@@ -28,4 +38,4 @@ Change state of `epel-release` rpm (default is `installed`, change to `latest` t
     - hosts: all
       remote_user: root
       roles:
-        - { role: epel, epel_state: latest }
+        - { role: goozbach.EPEL, epel_state: latest }
