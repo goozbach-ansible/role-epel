@@ -1,4 +1,5 @@
 ---
+# TODO fix this
 epel_release_name: epel-release-6-8.noarch.rpm
 galaxy_info:
   author: Derek Carter
@@ -11,5 +12,7 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
+        - 7
         - 6
+        - 5
 dependencies: []
