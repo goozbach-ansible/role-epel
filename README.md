@@ -25,9 +25,9 @@ Enable or disable `epel-testing` or `epel` repositories like this:
     ---
     - hosts: all
       remote_user: root
-        roles:
-      - { role: goozbach.EPEL, epel_testing_enabled: 1 }
-      - { role: goozbach.EPEL, epel_enabled: 0 }
+      roles:
+        - { role: goozbach.EPEL, epel_testing_enabled: 1 }
+        - { role: goozbach.EPEL, epel_enabled: 0 }
 ```
 
 To use a disabled repo using the `yum` module use this syntax:

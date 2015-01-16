@@ -24,11 +24,11 @@ goozbach_epel_hash:
         preset_enabled: 1
 
 
-gpgkey_file: "{{ goozbach_epel_hash[ansible_distribution_major_version][gpgkey_file] }}"
-macro_file: "{{ goozbach_epel_hash[ansible_distribution_major_version][macro_file] }}"
-macro_dir: "{{ goozbach_epel_hash[ansible_distribution_major_version][macro_dir] }}"
-doc_dir: "{{ goozbach_epel_hash[ansible_distribution_major_version][doc_dir] }}"
-preset_dir: "{{ goozbach_epel_hash[ansible_distribution_major_version][preset_dir] }}"
-preset_file: "{{ goozbach_epel_hash[ansible_distribution_major_version][preset_file] }}"
-preset_enabled: "{{ goozbach_epel_hash[ansible_distribution_major_version][preset_enabled] }}"
-macro_enabled: "{{ goozbach_epel_hash[ansible_distribution_major_version][macro_enabled] }}"
+gpgkey_file: "{{ goozbach_epel_hash[ansible_distribution_major_version]['gpgkey_file'] }}"
+macro_file: "{{ goozbach_epel_hash[ansible_distribution_major_version]['macro_file'] }}"
+macro_dir: "{{ goozbach_epel_hash[ansible_distribution_major_version]['macro_dir'] }}"
+doc_dir: "{{ goozbach_epel_hash[ansible_distribution_major_version]['doc_dir'] }}"
+preset_dir: "{{ goozbach_epel_hash[ansible_distribution_major_version]['preset_dir'] }}"
+preset_file: "{{ goozbach_epel_hash[ansible_distribution_major_version]['preset_file'] }}"
+preset_enabled: "{{ goozbach_epel_hash[ansible_distribution_major_version]['preset_enabled'] }}"
+macro_enabled: "{{ goozbach_epel_hash[ansible_distribution_major_version]['macro_enabled'] }}"
