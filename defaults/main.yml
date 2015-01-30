@@ -2,3 +2,23 @@
 epel_testing_enabled: 0
 epel_enabled: 1
 epel_state: installed
+
+epel_urlhost: "download.fedoraproject.org"
+
+epel-testing_urlpath: "/pub/epel/testing/{{ ansible_distribution_major_version }}/$basearch"
+epel-testing_baseurl: "{{ epel_protocol | default('http://')}}{{ epel_urlhost }}{{ epel-testing_urlpath }}"
+
+epel-testing-debug_urlpath: "/pub/epel/testing/{{ ansible_distribution_major_version }}/$basearch/debug"
+epel-testing-debug_baseurl: "{{ epel_protocol | default('http://')}}{{ epel_urlhost }}{{ epel-testing-debug_urlpath }}"
+
+epel-testing-srpms_urlpath: "/pub/epel/testing/{{ ansible_distribution_major_version }}/SRPMS"
+epel-testing-srpms_baseurl: "{{ epel_protocol | default('http://')}}{{ epel_urlhost }}{{ epel-testing-srpms_urlpath }}"
+
+epel_urlpath: "/pub/epel/{{ ansible_distribution_major_version }}/$basearch"
+epel_baseurl: "{{ epel_protocol | default('http://')}}{{ epel_urlhost }}{{ epel_urlpath }}"
+
+epel-debug_urlpath: "/pub/epel/{{ ansible_distribution_major_version }}/$basearch/debug"
+epel-debug_baseurl: "{{ epel_protocol | default('http://')}}{{ epel_urlhost }}{{ epel-debug_urlpath }}"
+
+epel-srpms_urlpath: "/pub/epel/{{ ansible_distribution_major_version }}/SRPMS"
+epel-srpms_baseurl: "{{ epel_protocol | default('http://')}}{{ epel_urlhost }}{{ epel-srpms_urlpath }}"
