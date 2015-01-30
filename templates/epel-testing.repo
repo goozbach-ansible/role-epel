@@ -1,7 +1,11 @@
 [epel-testing]
 name=Extra Packages for Enterprise Linux {{ ansible_distribution_major_version }} - Testing - $basearch
+{% if use_baseurl %}
+baseurl={{ epel-testing_baseurl }}
+{% else %}
 #baseurl=http://download.fedoraproject.org/pub/epel/testing/{{ ansible_distribution_major_version }}/$basearch
 mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=testing-epel{{ ansible_distribution_major_version }}&arch=$basearch
+{% endif %}
 failovermethod=priority
 enabled={{ epel_testing_enabled }}
 gpgcheck=1
@@ -9,8 +13,12 @@ gpgkey=file:///etc/pki/rpm-gpg/{{ gpgkey_file }}
 
 [epel-testing-debuginfo]
 name=Extra Packages for Enterprise Linux {{ ansible_distribution_major_version }} - Testing - $basearch - Debug
+{% if use_baseurl %}
+baseurl={{ epel-testing-debug_baseurl }}
+{% else %}
 #baseurl=http://download.fedoraproject.org/pub/epel/testing/{{ ansible_distribution_major_version }}/$basearch/debug
 mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel{{ ansible_distribution_major_version }}&arch=$basearch
+{% endif %}
 failovermethod=priority
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/{{ gpgkey_file }}
@@ -18,8 +26,12 @@ gpgcheck=1
 
 [epel-testing-source]
 name=Extra Packages for Enterprise Linux {{ ansible_distribution_major_version }} - Testing - $basearch - Source
+{% if use_baseurl %}
+baseurl={{ epel-testing-srpms_baseurl }}
+{% else %}
 #baseurl=http://download.fedoraproject.org/pub/epel/testing/{{ ansible_distribution_major_version }}/SRPMS
 mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel{{ ansible_distribution_major_version }}&arch=$basearch
+{% endif %}
 failovermethod=priority
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/{{ gpgkey_file }}
