@@ -45,3 +45,8 @@ Change state of `epel-release` rpm (default is `installed`, change to `latest` t
       roles:
         - { role: goozbach.EPEL, epel_state: latest }
 ```
+
+Copyright (c) Derek Carter <derek@goozbach.com>
+
+Licensed either under MIT or GPL version 2.0
+See `LICENSE` for details.
