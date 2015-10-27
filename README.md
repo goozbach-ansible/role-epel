@@ -113,3 +113,8 @@ Instead of using a generated URL for the `baseurl` parameter you can specify the
       roles:
         - { role: goozbach.EPEL, epel_state: latest, use_baseurl: True, epel_baseurl: 'http://foo.example.com/some/weird/layout/7/$basearch'}
 ```
+
+Copyright (c) Derek Carter <derek@goozbach.com>
+
+Licensed either under MIT or GPL version 2.0
+See `LICENSE` for details.
