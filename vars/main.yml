@@ -22,7 +22,15 @@ goozbach_epel_hash:
         preset_dir: '/usr/lib/systemd/system-preset/'
         preset_file: '90-epel.preset'
         preset_enabled: 1
-
+    "8":
+        gpgkey_file: 'RPM-GPG-KEY-EPEL-8'
+        macro_dir: '/usr/lib/rpm/macros.d/'
+        macro_file: 'macros.ghc-srpm'
+        macro_enabled: 1
+        doc_dir: '/usr/share/doc/epel-release-8'
+        preset_dir: '/usr/lib/systemd/system-preset/'
+        preset_file: '90-epel.preset'
+        preset_enabled: 1
 
 gpgkey_file: "{{ goozbach_epel_hash[ansible_distribution_major_version]['gpgkey_file'] }}"
 macro_file: "{{ goozbach_epel_hash[ansible_distribution_major_version]['macro_file'] }}"
